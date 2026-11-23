@@ -1,17 +1,17 @@
 # CacheLab 报告
 
-姓名：xxx
+姓名：邵婕宁
 
-学号：2025200000
+学号：2025200686
 
 | csim 分数（/100） | case1 speedup | case2 speedup | case3 speedup | weighted speedup | Part B 性能分（/100） |
 | ---------------- | ------------- | ------------- | ------------- | ---------------- | ------------------- |
-| 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| 100 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
 
 <!-- 保留两位小数，四舍五入 -->
 
 本地评测截图：
-
+![partA评分截图](./img/partA.png)
 <!-- 在项目根目录运行 python3 test/overall_test.py，插入本次运行的终端截图。
 请包含 Part A 的完整结果、Part B 各 case 的状态和性能数据，以及各自的百分制分数；可分成多张图片。
 也可以分别运行 python3 test/csim_test.py 和 python3 test/gemm_test.py 后截图。
@@ -24,6 +24,11 @@
 ### 实现简述
 
 <!-- 简述 LRU 替换策略的 cache 的具体实现细节 -->
+lru替换策略：
+
+维护一个全局递增的lru_clock，lru_clock越小越老，越优先替换
+
+未触发eviction时，行lru=lru_clock+1；触发eviction时，遍历替换该组lru最小的行并重设它的lru=lru_clock+1。
 
 ### 亮点
 
